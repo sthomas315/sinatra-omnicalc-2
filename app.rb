@@ -34,10 +34,10 @@ get("/multiply") do
 end
 
 get("/wizard_multiply") do
-  @first_mul = params.fetch("multiply_first").to_f
-  @second_mul = params.fetch("multiply_again").to_f
+  @first_mult = params.fetch("first_multiplication").to_f
+  @second_mult = params.fetch("second_multiplication").to_f
 
-  @result_mul = @first_mul * @second_mul
+  @result_mult = @first_mult * @second_mult
   erb(:mult_result)
 end
 
@@ -46,5 +46,9 @@ get("/divide") do
 end
 
 get("/wizard_divide") do
+  @first_divide = params.fetch("first_div").to_f
+  @second_divide = params.fetch("second_div").to_f
+
+  @result_div = @first_divide / @second_divide
   erb(:div_result)
 end
